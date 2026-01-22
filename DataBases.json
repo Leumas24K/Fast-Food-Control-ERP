@@ -1,0 +1,24 @@
+{
+
+    "personas":[
+
+        {
+            "id": 1,
+            "nombre": "Juan Perez",
+            "edad": 30,
+            "ciudad": "Buenos Aires"
+        },
+        {
+            "id": 2,
+            "nombre": "Maria Gomez",
+            "edad": 25,
+            "ciudad": "Córdoba"
+        },
+        {
+            "id": 3,
+            "nombre": "Luis Rodriguez",
+            "edad": 28,
+            "ciudad": "Rosario"
+        }
+    ]
+}
