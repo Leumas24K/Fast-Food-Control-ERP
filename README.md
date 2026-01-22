@@ -15,3 +15,15 @@ Inventario Inteligente: Seguimiento de stock con alertas de cantidad mínima.
 Sistema de Pedidos (POS): Interfaz ágil para la toma de pedidos y envío a cocina.
 
 Módulo de Facturación: Generación automática de tickets y cuentas de clientes.
+
+## 🛠️ Stack Tecnológico
+
+Frontend: React (Vite)
+
+Estilos: Tailwind CSS
+
+Enrutamiento: React Router Dom
+
+Base de Datos (Simulada): JSON Server
+
+Gestión de Estado: Context API
