@@ -12,7 +12,9 @@ import ProtectedRoutes from './routes/ProtectedRoutes.jsx'
 
 const router = createBrowserRouter([
 
-  { path: "/",    element: <Home /> },
+  { path: "/",    element: <App /> },
+
+  { path: "/home",    element: <Home /> },
 
   { path: "/client",    element: <Client /> },
 
