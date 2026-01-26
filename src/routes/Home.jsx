@@ -1,15 +1,14 @@
-import Cardhome from "../components/Cardhome"
+import Sectionhome from '../components/Sectionhome'
 
 const Home = () => {
   return (
 
-    <section className="bg-fondo-light m-auto min-h-screen w-[375px] border-2 border-black">
+    <section className="w-[375px]  m-auto">
 
-      <h1 className='text-center'>Soy la pagina principal por defecto</h1>
+
+      <Sectionhome/>
 
       
-
-
 
 
 

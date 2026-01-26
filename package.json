@@ -7,7 +7,7 @@
     "start": "react-scripts start",
     "server": "json-server --watch db.json --port 8000",
     "all":"concurrently \"npm run server\" \"npm start\"",
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

@@ -1,57 +1,34 @@
 import { Link } from "react-router"
-import iconUser from "./assets/icons/user-light.svg"
-import IconStaff from "./assets/icons/dashboard-square-1.svg"
 
 function App() {
 
   return (
 
-    <main className="bg-fondo-light min-h-screen w-[375px] m-auto  ">
+    <main className=" w-[375px] flex flex-col justify-center items-center m-auto bg-fondo-dark min-h-screen text-center py-10 px-6 text-white">
+
+      <h4 className="font-bold text-secondary">FastFood Pro Management v1.0</h4>
+
+      <h1 className="text-6xl text-primary font-extrabold mt-5">Sabor Real a la <span className="text-secondary">Velocidad Digital.</span></h1>
+
+      <p className="text-sm text-slate-400 mt-10 ">
+        "Bienvenido a la nueva era de <strong>FastFood Pro</strong>. Gestiona tu negocio
+        con precisión quirúrgica o disfruta de nuestro menú diseñado para
+        los amantes de la verdadera comida rápida. ¿Listo para empezar?"
+      </p>
 
 
-      <div>
+      <button className="mt-10">
 
-        <div className="bg-fondo-dark h-1/2 flex flex-col items-center gap-2 px-6 py-6 ">
+        <Link
+          to="/home"
+          className="bg-slate-400 px-6 py-3 rounded-3xl hover:bg-slate-500"
+        >
+          Comenzar Experiencia →
+        </Link>
 
-          <figure>
-            <img src={iconUser} alt="iconUser" />
-          </figure>
+      </button>
 
-          <h2 className="text-3xl font-extrabold text-primary">¡Quiero Comer!</h2>
-
-          <p className="text-white text-center text-sm" >Explora nuestro menú, personaliza tu pedido y paga de forma rápida.</p>
-
-          <Link
-            to="/client"
-            className="bg-primary text-white font-bold px-8 py-3 rounded-full">
-            Ver Menú
-          </Link>
-
-        </div>
-
-        <div className="bg-primary h-full flex flex-col items-center gap-2 px-6 py-6">
-
-          <figure>
-            <img src={IconStaff} alt="Icon Staff" />
-          </figure>
-
-          <h1 className="text-3xl font-extrabold text-fondo-dark">Acceso Staff</h1>
-
-          <p className="text-center text-sm text-white">Gestión de inventario, control de mesas y procesamiento de pedidos.</p>
-
-          <Link
-            className="bg-fondo-dark text-white font-bold px-8 py-3 rounded-full"
-            to="/signin">
-            Iniciar Sesion
-
-          </Link>
-
-        </div>
-
-
-      </div>
-
-    </main >
+    </main>
   )
 }
 
