@@ -3,9 +3,9 @@ import { useState } from "react";
 
 export default function ProtectedRoutes () {
 
-    const [isAuthenticated] = useState(false);
+    const [isAuthenticated] = useState(true);
 
-    return isAuthenticated ? <Outlet /> : <Navigate to="/signin" />;
+    return isAuthenticated ? <Outlet /> : <Navigate to="/dashboard" />;
 
 }
 

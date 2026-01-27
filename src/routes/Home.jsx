@@ -3,15 +3,8 @@ import Sectionhome from '../components/Sectionhome'
 const Home = () => {
   return (
 
-    <section className="w-[375px]  m-auto">
-
-
+    <section>
       <Sectionhome/>
-
-      
-
-
-
     </section>
   )
 }

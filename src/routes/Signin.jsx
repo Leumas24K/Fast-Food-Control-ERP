@@ -1,11 +1,17 @@
 import React from 'react'
+import SectionSignIn from '../components/SectionSignIn'
 
 const Signin = () => {
   return (
-    <div>
-      <h1 className='text-center'>Vista del incio de sesion</h1>
+    <div className=''>
+
+      
+
+      <SectionSignIn/>
+      
     </div>
   )
 }
 
 export default Signin
+

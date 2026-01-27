@@ -1,53 +1,51 @@
 
 import { Link } from 'react-router'
-import iconFood from '../assets/icons/food-dish.svg'
-import iconManage from '../assets/icons/user.svg'
+import CardHome from './CardHome'
+import iconFood from '../assets/icons/icon_food.svg'
+import iconManage from '../assets/icons/icon-manage.svg'
 
 const Sectionhome = () => {
 
     return (
 
-        <section className='h-screen'>
+        <section className='bg-fondo-light text-center min-h-screen flex flex-col md:flex-row md:items-center md:justify-center  '>
 
-            <div className='bg-fondo-dark h-1/2 flex flex-col items-center justify-center text-center gap-5 px-6 py-9'>
+            <div className='bg-fondo-light flex-1 flex flex-col '>
+                <CardHome
 
-                <figure>
-                    <img src={iconFood} alt="Icon client" />
-                </figure>
+                    icon={iconFood}
+                    tittle={"¡Quiero Comer!"}
+                    description={"Explora nuestro menú, personaliza tu pedido y paga de forma rápida."}
 
-                <h2 className="text-3xl font-bold text-primary">¡Quiero Comer!</h2>
+                />
 
-                <p className='text-sm text-slate-400'>Explora nuestro menú, personaliza tu pedido y paga de forma rápida.</p>
-
-                <button className='mt-5'>
+                <button>
                     <Link
-                        to="/client"
-                        className='bg-primary text-white hover:bg-orange-300 px-6 py-3 rounded-full '
+                        to="/menu"
+                        className='bg-primary hover:bg-amber-600 px-6 py-3 rounded-full text-white font-semibold'
                     >Ver Menú
                     </Link>
                 </button>
             </div>
 
-            <div className='bg-primary h-1/2 flex flex-col items-center justify-center text-center gap-5 px-6 py-9'>
+            <div className='bg-fondo-light flex-1 flex flex-col '>
+                <CardHome
 
-                <figure>
-                    <img src={iconManage} alt="icon administration" />
-                </figure>
+                    icon={iconManage}
+                    tittle={"Acceso Staff"}
+                    description={"Gestión de inventario, control de mesas y procesamiento de pedidos."}
 
-                <h2 className="text-3xl font-bold text-fondo-dark">Acceso Staff</h2>
+                />
 
-                <p className='text-sm text-fondo-dark'>Gestión de inventario, control de mesas y procesamiento de pedidos.</p>
-
-                <button className='mt-5'>
+                <button>
                     <Link
                         to="/signin"
-                        className='bg-fondo-dark text-white hover:bg-slate-400 px-6 py-3 rounded-full'
-                        >Iniciar Sesión
-                    
+                        className='bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-full text-white font-semibold'
+                    >Iniciar Sesion
                     </Link>
                 </button>
+                
             </div>
-
 
         </section>
     )
