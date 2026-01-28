@@ -43,15 +43,13 @@ const SectionSignIn = () => {
                             />
                         </div>
 
-                        <button
-                            type='submit'
+                        <Link
+                            to="/dashboard"
                             className='bg-indigo-500 text-center text-white px-6 py-3 rounded-lg'>
-                            <Link
-                                to="/dashboard">
-                                Ingresar al Sistema
 
-                            </Link>
-                        </button>
+                            Ingresar al Sistema
+
+                        </Link>
                     </form>
 
                     <div className='text-sm text-center mt-8'>
