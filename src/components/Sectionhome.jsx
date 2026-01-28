@@ -28,7 +28,7 @@ const Sectionhome = () => {
                 </button>
             </div>
 
-            <div className='bg-fondo-light flex-1 flex flex-col '>
+            <div className='bg-fondo-light flex-1 mt-10 md:mt-0 flex flex-col '>
                 <CardHome
 
                     icon={iconManage}
@@ -44,7 +44,7 @@ const Sectionhome = () => {
                     >Iniciar Sesion
                     </Link>
                 </button>
-                
+
             </div>
 
         </section>
