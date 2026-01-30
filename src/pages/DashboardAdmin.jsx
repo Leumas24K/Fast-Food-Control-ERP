@@ -1,6 +1,4 @@
-import React from 'react'
-
-const DashboardAdmin = () => {
+export default function DashboardAdmin() {
   return (
     <div>
       <h1>Vista del Dashboard/Staff</h1>
@@ -8,4 +6,3 @@ const DashboardAdmin = () => {
   )
 }
 
-export default DashboardAdmin

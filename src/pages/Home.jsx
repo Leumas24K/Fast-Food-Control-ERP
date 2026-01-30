@@ -3,8 +3,9 @@ import CardHome from '../components/CardHome'
 import iconFood from '../assets/icons/icon_food.svg'
 import iconManage from '../assets/icons/icon-manage.svg'
 
-const Home = () => {
-    return (
+export default function Home() {
+    
+  return (
         <section className='bg-fondo-light text-center min-h-screen flex flex-col md:flex-row md:items-center md:justify-center  '>
 
             <div className='bg-fondo-light flex-1 flex flex-col'>
@@ -45,7 +46,6 @@ const Home = () => {
             </div>
 
         </section>
-    )
+  )
 }
 
-export default Home

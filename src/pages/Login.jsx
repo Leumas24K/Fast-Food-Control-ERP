@@ -1,8 +1,10 @@
 import { Link } from 'react-router';
 import iconLogin from '../assets/icons/icon_login.svg';
 
-const Login = () => {
+export default function Login() {
+
   return (
+
     <section>
 
       <div className="min-h-screen bg-fondo-light flex flex-col items-center justify-center">
@@ -16,7 +18,7 @@ const Login = () => {
 
             <h1 className='text-2xl font-extrabold text-slate-800'>Staff Login</h1>
 
-            <p className='text-sm text-slate-500'>Ingresa tus credenciales de empleado</p>
+            <p className='text-sm font-Inter text-slate-500'>Ingresa tus credenciales de empleado</p>
           </div>
 
           <form className=' flex flex-col gap-8 mt-10'>
@@ -66,4 +68,3 @@ const Login = () => {
   )
 }
 
-export default Login

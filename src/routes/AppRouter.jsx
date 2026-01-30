@@ -7,22 +7,21 @@ import Home from '../pages/Home';
 import DashboardAdmin from '../pages/DashboardAdmin';
 import DashboardWaiter from '../pages/DashboardWaiter';
 
-const AppRouter = () => {
+export default function AppRouter() {
     return (
         <Routes>
 
             {/* RUTAS PÚBLICAS (Cualquiera accede) */}
-            <Route path="/" element={<LandingPage/>}/>
-            <Route path="/home" element={<Home/>}/>
-            <Route path="/menu" element={<Menu/>}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route path="*" element={<NotFound/>}/>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<NotFound />} />
 
             {/* RUTAS PRIVADAS (Staff/Admin) */}
-            <Route path="/dashboard-Admin" element={<DashboardAdmin/>}/>
-            <Route path="/dasboard-Waiter" element={<DashboardWaiter/>}/>
+            <Route path="/dashboard-Admin" element={<DashboardAdmin />} />
+            <Route path="/dasboard-Waiter" element={<DashboardWaiter />} />
         </Routes>
     )
 }
 
-export default AppRouter

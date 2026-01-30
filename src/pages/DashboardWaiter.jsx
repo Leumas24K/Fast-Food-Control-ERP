@@ -1,6 +1,4 @@
-import React from 'react'
-
-const DashboardWaiter = () => {
+export default function DashboardWaiter() {
   return (
     <div>
       <h1>Vista del Dashboard/Mesero</h1>
@@ -8,4 +6,3 @@ const DashboardWaiter = () => {
   )
 }
 
-export default DashboardWaiter
