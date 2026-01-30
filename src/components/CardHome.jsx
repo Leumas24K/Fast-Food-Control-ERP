@@ -1,6 +1,3 @@
-import React from 'react'
-
-
 const CardHome = ({icon, tittle, description}) => {
   return (
     <div className='flex flex-col items-center gap-5 px-10 py-10'>
