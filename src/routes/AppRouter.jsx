@@ -1,10 +1,27 @@
-import React from 'react'
+import { Routes, Route } from 'react-router';
+import LandingPage from '../pages/LandingPage';
+import Login from '../pages/Login';
+import Menu from '../pages/Menu';
+import NotFound from '../pages/NotFound';
+import Home from '../pages/Home';
+import DashboardAdmin from '../pages/DashboardAdmin';
+import DashboardWaiter from '../pages/DashboardWaiter';
 
 const AppRouter = () => {
     return (
-        <div>
+        <Routes>
 
-        </div>
+            {/* RUTAS PÚBLICAS (Cualquiera accede) */}
+            <Route path="/" element={<LandingPage/>}/>
+            <Route path="/home" element={<Home/>}/>
+            <Route path="/menu" element={<Menu/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="*" element={<NotFound/>}/>
+
+            {/* RUTAS PRIVADAS (Staff/Admin) */}
+            <Route path="/dashboard-Admin" element={<DashboardAdmin/>}/>
+            <Route path="/dasboard-Waiter" element={<DashboardWaiter/>}/>
+        </Routes>
     )
 }
 

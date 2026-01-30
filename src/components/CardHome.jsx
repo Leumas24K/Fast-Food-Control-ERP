@@ -8,7 +8,7 @@ const CardHome = ({icon, tittle, description}) => {
 
         <h1 className='text-4xl font-extrabold text-slate-900'>{tittle}</h1>
 
-        <p className='text-sm  text-slate-600'>{description}</p>
+        <p className='text-sm lg:px-30 text-slate-600'>{description}</p>
 
         <p></p>
     </div>

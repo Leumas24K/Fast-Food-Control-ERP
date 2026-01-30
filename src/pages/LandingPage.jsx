@@ -1,50 +1,34 @@
 import { Link } from 'react-router'
-import CardHome from './CardHome'
-import iconFood from '../assets/icons/icon_food.svg'
-import iconManage from '../assets/icons/icon-manage.svg'
 
 const LandingPage = () => {
   return (
-    <section className='bg-fondo-light text-center min-h-screen flex flex-col md:flex-row md:items-center md:justify-center  '>
+    <main className="min-h-screen bg-fondo-dark text-center flex flex-col items-center justify-center p-10  gap-10 overflow-hidden relative">
 
-      <div className='bg-fondo-light flex-1 flex flex-col '>
-        <CardHome
+      <div className="absolute w-96 h-96 top-[-10%] left-[-10%] blur-3xl opacity-10 bg-primary rounded-full"></div>
+      <div className="absolute w-96 h-96 bottom-[-10%] right-[-10%] blur-3xl opacity-10 bg-indigo-600 rounded-full"></div>
 
-          icon={iconFood}
-          tittle={"¡Quiero Comer!"}
-          description={"Explora nuestro menú, personaliza tu pedido y paga de forma rápida."}
+      <span className="text-secondary font-bold uppercase">FastFood Pro Management v1.0</span>
 
-        />
+      <h1 className="text-white text-6xl md:text-7xl font-extrabold" >Sabor Real a la <br />
 
-        <button>
-          <Link
-            to="/menu"
-            className='bg-primary hover:bg-amber-600 px-6 py-3 rounded-full text-white font-semibold'
-          >Ver Menú
-          </Link>
-        </button>
-      </div>
+        <span className="text-primary">Velocidad </span>
+        <span className="text-secondary">Digital.</span>
 
-      <div className='bg-fondo-light flex-1 mt-10 md:mt-0 flex flex-col '>
-        <CardHome
+      </h1>
 
-          icon={iconManage}
-          tittle={"Acceso Staff"}
-          description={"Gestión de inventario, control de mesas y procesamiento de pedidos."}
+      <p className="text-lg text-slate-400 md:px-30 xl:px-80 ">Bienvenido a la nueva era de <strong>FastFood Pro</strong>. Gestiona tu negocio con precisión quirúrgica
+        o disfruta de nuestro menú diseñado para los amantes de la verdadera comida rápida.
+      </p>
 
-        />
+      <Link
 
-        <button>
-          <Link
-            to="/signin"
-            className='bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-full text-white font-semibold'
-          >Iniciar Sesion
-          </Link>
-        </button>
+        to="/home"
+        className="bg-indigo-400 text-white px-6 py-3 rounded-2xl hover:bg-indigo-500"
+        >Comienza la Experiencia
 
-      </div>
+      </Link>
 
-    </section>
+    </main>
   )
 }
 

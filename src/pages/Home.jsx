@@ -1,16 +1,13 @@
-
 import { Link } from 'react-router'
-import CardHome from './CardHome'
+import CardHome from '../components/CardHome'
 import iconFood from '../assets/icons/icon_food.svg'
 import iconManage from '../assets/icons/icon-manage.svg'
 
-const Sectionhome = () => {
-
+const Home = () => {
     return (
-
         <section className='bg-fondo-light text-center min-h-screen flex flex-col md:flex-row md:items-center md:justify-center  '>
 
-            <div className='bg-fondo-light flex-1 flex flex-col '>
+            <div className='bg-fondo-light flex-1 flex flex-col'>
                 <CardHome
 
                     icon={iconFood}
@@ -39,7 +36,7 @@ const Sectionhome = () => {
 
                 <button>
                     <Link
-                        to="/signin"
+                        to="/login"
                         className='bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-full text-white font-semibold'
                     >Iniciar Sesion
                     </Link>
@@ -51,5 +48,4 @@ const Sectionhome = () => {
     )
 }
 
-export default Sectionhome
-
+export default Home

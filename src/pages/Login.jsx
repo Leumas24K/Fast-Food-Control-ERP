@@ -42,8 +42,8 @@ const Login = () => {
             </div>
 
             <Link
-              to="/dashboard"
-              className='bg-indigo-500 text-center text-white px-6 py-3 rounded-lg'>
+              to="/dashboard-Admin"
+              className='bg-indigo-500 text-center hover:bg-indigo-700 text-white px-6 py-3 rounded-lg'>
 
               Ingresar al Sistema
 
@@ -53,7 +53,7 @@ const Login = () => {
           <div className='text-sm text-center mt-8'>
             <Link
               to="/home"
-              className='underline text-slate-600 hover:text-indigo-600 '>
+              className='underline text-slate-600 hover:text-indigo-700 '>
               Volver al inicio
             </Link>
           </div>
