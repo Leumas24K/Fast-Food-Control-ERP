@@ -6,17 +6,34 @@
   font-style: normal;
   font-weight: 200 700;
   font-display: swap;
-  src: url("./assets/fonts/Poppins/Poppins-Regular.ttf") format("ttf");
+  src: url("./assets/fonts/Poppins/Poppins-Regular.ttf") format("woff2");
+}
+
+@font-face {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("./assets/fonts/Inter/Inter-VariableFont_opsz_wght.ttf") format("woff2");
 }
 
 @theme {
 
-  --color-primary: hsl(25, 95%, 53%);;
-  --color-secondary: hsl(43, 96%, 56%);;
-  --color-tertiary: hsl(217, 33%, 17%);;
-  --color-fondo-dark: hsl(222, 47%, 11%);;
-  --color-fondo-light: hsl(210, 20%, 98%);;
+  --color-primary: hsl(25, 95%, 53%);
+  --color-secondary: hsl(43, 96%, 56%);
+  --color-tertiary: hsl(217, 33%, 17%);
+  --color-fondo-dark: hsl(222, 47%, 11%);
+  --color-fondo-light: hsl(210, 20%, 98%);
+
+
   --font-Poppins: "Poppins";
+  --font-Inter: "Inter";
+
+}
+
+body{
+
+  @apply font-Poppins
 
 }
 
