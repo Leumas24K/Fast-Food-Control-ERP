@@ -46,15 +46,13 @@ export default function Login() {
             <Link
               to="/dashboard-Admin"
               className='bg-indigo-500 text-center hover:bg-indigo-700 text-white px-6 py-3 rounded-lg'>
-
               Ingresar al Sistema
-
             </Link>
           </form>
 
           <div className='text-sm text-center mt-8'>
             <Link
-              to="/home"
+              to="/"
               className='underline text-slate-600 hover:text-indigo-700 '>
               Volver al inicio
             </Link>

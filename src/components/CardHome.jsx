@@ -6,7 +6,7 @@ export default function CardHome({icon, tittle, description}) {
             <img src={icon} alt="" />
         </figure>
 
-        <h1 className='text-4xl font-extrabold text-slate-900'>{tittle}</h1>
+        <h1 className='text-4xl font-bold text-slate-900'>{tittle}</h1>
 
         <p className='text-sm font-Inter lg:px-30 text-slate-600'>{description}</p>
 

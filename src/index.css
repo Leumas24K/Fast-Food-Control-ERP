@@ -1,12 +1,11 @@
 @import 'tailwindcss';
 
-
 @font-face {
-  font-family: Poppins;
+  font-family: "Open Sans";
   font-style: normal;
-  font-weight: 200 700;
+  font-weight: 400 700;
   font-display: swap;
-  src: url("./assets/fonts/Poppins/Poppins-Regular.ttf") format("woff2");
+  src: url("./assets/fonts/Open_Sans/OpenSans-VariableFont_wdth_wght.ttf") format("woff2");
 }
 
 @font-face {
@@ -25,15 +24,13 @@
   --color-fondo-dark: hsl(222, 47%, 11%);
   --color-fondo-light: hsl(210, 20%, 98%);
 
-
-  --font-Poppins: "Poppins";
   --font-Inter: "Inter";
-
+  --font-Open-Sans: "Open Sans";
 }
 
 body{
 
-  @apply font-Poppins
+  @apply font-Open-Sans
 
 }
 
