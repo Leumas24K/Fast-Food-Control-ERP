@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "react-scripts start",
-    "server": "json-server --watch db.json --port 8000",
+    "server": "json-server --watch data.json --port 8000",
     "all": "concurrently \"npm run server\" \"npm start\"",
     "dev": "vite --host",
     "build": "vite build",

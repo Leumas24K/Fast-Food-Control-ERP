@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router';
 import LandingPage from '../pages/LandingPage';
 import Login from '../pages/Login';
-import Menu from '../pages/Menu';
+import Menu from '../pages/Client/Menu';
 import NotFound from '../pages/NotFound';
 import Home from '../pages/Home';
-import DashboardAdmin from '../pages/DashboardAdmin';
-import DashboardWaiter from '../pages/DashboardWaiter';
+import DashboardAdmin from '../pages/Admin/DashboardAdmin';
+import DashboardWaiter from '../pages/Waiter/DashboardWaiter';
 
 export default function AppRouter() {
     return (
