@@ -15,11 +15,51 @@
       "rol": "mesero"
     }
   ],
+
   "categorias": [
     { "id": 1, "nombre": "Hamburguesas", "slug": "hamburguesas" },
     { "id": 2, "nombre": "Bebidas", "slug": "bebidas" },
     { "id": 3, "nombre": "Acompañamientos", "slug": "acompanamientos" }
   ],
+
+  "mercancia": [
+    {
+      "id": 1,
+      "nombre": "Papas",
+      "stock": 250,
+      "kilos": 500,
+      "imagen": "./assets/images/papas.jpg"
+    },
+        {
+      "id": 2,
+      "nombre": "Tomate",
+      "stock": 300,
+      "kilos": 500,
+      "imagen": "./assets/images/tomates.jpg"
+    },
+        {
+      "id": 3,
+      "nombre": "Jamon",
+      "stock": 150,
+      "kilos": 500,
+      "imagen": "./assets/images/jamon.jpg"
+    },
+        {
+      "id": 4,
+      "nombre": "Queso",
+      "stock": 350,
+      "kilos": 500,
+      "imagen": "./assets/images/queso.jpg"
+    },
+        {
+      "id": 5,
+      "nombre": "Pan de Hamburguesa",
+      "stock": 140,
+      "kilos": 500,
+      "imagen": "./assets/images/pan-de-hamburguesa.jpg"
+    }
+  ],
+
   "productos": [
     {
       "id": 1,
@@ -67,18 +107,20 @@
       "imagen": "./assets/images/pepsi-cola.jpg"
     }
   ],
+
   "mesas": [
     { "id": 1, "nombre": "Mesa 1", "capacidad": 2, "estado": "disponible" },
     { "id": 2, "nombre": "Mesa 2", "capacidad": 4, "estado": "ocupada" },
     { "id": 3, "nombre": "Mesa 3", "capacidad": 4, "estado": "disponible" },
     { "id": 4, "nombre": "Barra", "capacidad": 1, "estado": "disponible" }
   ],
+
   "pedidos": [
     {
-      "id": "ord_1001",
+      "id": 1,
       "cliente": "Carlos Invitado",
       "mesa": 2,
-      "items": [
+      "orden": [
         { "id_producto": 1, "nombre": "Monster Burger", "cantidad": 2, "precio": 12.50 },
         { "id_producto": 4, "nombre": "Soda Refrescante", "cantidad": 2, "precio": 2.50 }
       ],

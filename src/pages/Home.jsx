@@ -1,5 +1,5 @@
 import { Link } from 'react-router'
-import CardHome from '../components/CardHome'
+import CardHome from '../components/Home/CardHome'
 import iconFood from '../assets/icons/icon_food.svg'
 import iconManage from '../assets/icons/icon-manage.svg'
 

@@ -1,6 +1,6 @@
 import { Plus } from 'lucide-react';
 
-export default function Cardproduct({imagen,nombre,descripcion,precio}) {
+export default function CardProduct({imagen,nombre,descripcion,precio}) {
 
     
 

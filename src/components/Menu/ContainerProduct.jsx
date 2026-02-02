@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import CardProduct from "./Cardproduct";
+import CardProduct from "./CardProduct";
 
 
 
@@ -9,11 +9,13 @@ export default function ContainerProduct() {
 
     useEffect(() => {
 
-        // 1. Función para traer los datos del json-server
+        // 1. Función para traer los datos (productos) con metodo GET del json-server
+
         const obtenerProductos = async () => {
             try {
                 const response = await fetch('http://localhost:8000/productos');
                 const data = await response.json();
+                console.log('Productos importados exitosamente:',data);
                 setProductos(data);
 
             } catch (error) {

@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 import { ArrowLeft } from 'lucide-react';
 import { ShoppingCart } from 'lucide-react';
-import ContainerProduct from '../../components/ContainerProduct';
+import ContainerProduct from '../../components/Menu/ContainerProduct';
 
 
 
@@ -13,7 +13,7 @@ export default function Menu() {
 
       <nav className='flex  justify-between items-center  py-4  '>
 
-        <div className='flex gap-5 items-center'>
+        <div className='flex gap-2 items-center'>
 
           <Link
             className='text-fondo-dark hover:text-primary transition-colors'
