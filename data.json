@@ -1,132 +1,132 @@
 {
-  "usuarios": [
+  "users": [
     {
       "id": 1,
-      "nombre": "Administrador",
+      "name": "Administrador",
       "email": "admin@fastfood.com",
       "password": "123",
       "rol": "admin"
     },
     {
       "id": 2,
-      "nombre": "Juan Mesero",
+      "name": "Juan Mesero",
       "email": "juan@fastfood.com",
       "password": "123",
-      "rol": "mesero"
+      "rol": "waiter"
     }
   ],
 
-  "categorias": [
-    { "id": 1, "nombre": "Hamburguesas", "slug": "hamburguesas" },
-    { "id": 2, "nombre": "Bebidas", "slug": "bebidas" },
-    { "id": 3, "nombre": "Acompañamientos", "slug": "acompanamientos" }
+  "categories": [
+    { "id": 1, "name": "Hamburguesas", "category": "hamburguesas" },
+    { "id": 2, "name": "Bebidas", "category": "bebidas" },
+    { "id": 3, "name": "Acompañamientos", "category": "acompañamientos" }
   ],
 
-  "mercancia": [
+  "commodity": [
     {
       "id": 1,
-      "nombre": "Papas",
+      "name": "Papas",
       "stock": 250,
       "kilos": 500,
       "imagen": "./assets/images/papas.jpg"
     },
         {
       "id": 2,
-      "nombre": "Tomate",
+      "name": "Tomate",
       "stock": 300,
       "kilos": 500,
       "imagen": "./assets/images/tomates.jpg"
     },
         {
       "id": 3,
-      "nombre": "Jamon",
+      "name": "Jamon",
       "stock": 150,
       "kilos": 500,
       "imagen": "./assets/images/jamon.jpg"
     },
         {
       "id": 4,
-      "nombre": "Queso",
+      "name": "Queso",
       "stock": 350,
       "kilos": 500,
       "imagen": "./assets/images/queso.jpg"
     },
         {
       "id": 5,
-      "nombre": "Pan de Hamburguesa",
+      "name": "Pan de Hamburguesa",
       "stock": 140,
       "kilos": 500,
       "imagen": "./assets/images/pan-de-hamburguesa.jpg"
     }
   ],
 
-  "productos": [
+  "products": [
     {
       "id": 1,
-      "nombre": "Monster Burger",
-      "descripcion": "Doble carne, queso cheddar fundido, bacon crujiente y salsa secreta.",
-      "precio": 12.50,
-      "categoria": "hamburguesas",
+      "name": "Monster Burger",
+      "description": "Doble carne, queso cheddar fundido, bacon crujiente y salsa secreta.",
+      "price": 12.50,
+      "category": "hamburguesas",
       "stock": 50,
       "imagen": "./assets/images/hamburguesa-carne.jpg"
     },
     {
       "id": 2,
-      "nombre": "Hamburguesa Krispy",
-      "descripcion": "La tradicional. Pollo empanizado, lechuga fresca, tomate y queso americano.",
-      "precio": 8.90,
-      "categoria": "hamburguesas",
+      "name": "Hamburguesa Krispy",
+      "description": "La tradicional. Pollo empanizado, lechuga fresca, tomate y queso americano.",
+      "price": 8.90,
+      "category": "hamburguesas",
       "stock": 100,
       "imagen": "./assets/images/hamburguesa-pollo.jpg"
     },
     {
       "id": 3,
-      "nombre": "Papas Rústicas",
-      "descripcion": "Papas cortadas a mano con piel, sazonadas con romero y sal marina.",
-      "precio": 4.50,
-      "categoria": "acompanamientos",
+      "name": "Papas Rústicas",
+      "description": "Papas cortadas a mano con piel, sazonadas con romero y sal marina.",
+      "price": 4.50,
+      "category": "acompañamientos",
       "stock": 200,
       "imagen": "./assets/images/papas-fritas.jpg"
     },
     {
       "id": 4,
-      "nombre": "Nestea de Limón",
-      "descripcion": "Vaso de 500ml con hielo. Sabores a elección.",
-      "precio": 2.50,
-      "categoria": "bebidas",
+      "name": "Nestea de Limón",
+      "description": "Vaso de 500ml con hielo. Sabores a elección.",
+      "price": 2.50,
+      "category": "bebidas",
       "stock": 500,
       "imagen": "./assets/images/nestea-limon.jpg"
     },
     {
       "id": 5,
-      "nombre": "Pepsi Cola",
-      "descripcion": "Vaso de 500ml con hielo. Sabores a elección.",
-      "precio": 2.50,
-      "categoria": "bebidas",
+      "name": "Pepsi Cola",
+      "description": "Vaso de 500ml con hielo. Sabores a elección.",
+      "price": 2.50,
+      "category": "bebidas",
       "stock": 500,
       "imagen": "./assets/images/pepsi-cola.jpg"
     }
   ],
 
-  "mesas": [
-    { "id": 1, "nombre": "Mesa 1", "capacidad": 2, "estado": "disponible" },
-    { "id": 2, "nombre": "Mesa 2", "capacidad": 4, "estado": "ocupada" },
-    { "id": 3, "nombre": "Mesa 3", "capacidad": 4, "estado": "disponible" },
-    { "id": 4, "nombre": "Barra", "capacidad": 1, "estado": "disponible" }
+  "tables": [
+    { "id": 1, "name": "Mesa 1", "capacity": 2, "status": "disponible" },
+    { "id": 2, "name": "Mesa 2", "capacity": 4, "status": "ocupada" },
+    { "id": 3, "name": "Mesa 3", "capacity": 4, "status": "disponible" },
+    { "id": 4, "name": "Barra", "capacity": 1, "status": "disponible" }
   ],
 
-  "pedidos": [
+  "orders": [
     {
-      "id": 1,
-      "cliente": "Carlos Invitado",
-      "mesa": 2,
-      "orden": [
-        { "id_producto": 1, "nombre": "Monster Burger", "cantidad": 2, "precio": 12.50 },
-        { "id_producto": 4, "nombre": "Soda Refrescante", "cantidad": 2, "precio": 2.50 }
+      "id": "5001",
+      "client": "Carlos Invitado",
+      "table": 2,
+      "order": [
+        { "id_product": 1, "name": "Monster Burger", "quantity": 2, "price": 12.50 },
+        { "id_product": 4, "name": "Soda Refrescante", "quantity": 2, "price": 2.50 }
       ],
       "total": 30.00,
-      "fecha": "2023-10-25T14:30:00.000Z",
-      "estado": "pendiente" 
+      "date": "2023-10-25T14:30:00.000Z",
+      "status": "pendiente" 
     }
   ]
 }

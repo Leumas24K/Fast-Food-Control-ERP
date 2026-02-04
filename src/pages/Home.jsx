@@ -20,7 +20,7 @@ export default function Home() {
                 <button>
                     <Link
                         to="/menu"
-                        className='bg-primary hover:bg-amber-600 px-6 py-3 rounded-full text-white font-semibold'
+                        className='bg-primary hover:bg-amber-600 px-6 py-3 rounded-full hover:scale-105 transition-all text-white font-semibold'
                     >Ver Menú
                     </Link>
                 </button>
@@ -38,7 +38,7 @@ export default function Home() {
                 <button>
                     <Link
                         to="/login"
-                        className='bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-full text-white font-semibold'
+                        className='bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-full hover:scale-105 transition-all text-white font-semibold'
                     >Iniciar Sesion
                     </Link>
                 </button>
