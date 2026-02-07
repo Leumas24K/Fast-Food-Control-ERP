@@ -1,7 +1,14 @@
 import { Link } from 'react-router';
-import { ArrowLeft, ShoppingCart } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
+import { useCart } from '../../context/CartContext';
 
 export default function NavbarMenu() {
+  const { cart } = useCart();
+
+  const totalProducts = cart.reduce((acc, produc) =>
+    acc + produc.quantity, 0
+  )
+
   return (
     <div>
       <nav className='flex justify-between items-center py-4'>
@@ -19,7 +26,7 @@ export default function NavbarMenu() {
             to='/cart'>
             <ShoppingCart size={32} />
           </Link>
-          <span className='absolute -top-2.5 right-0 text-sm text-white bg-indigo-600 px-1 rounded-full'>0</span>
+          <span className='absolute -top-2.5 right-0 text-sm text-white bg-indigo-600 px-1 rounded-full'>{totalProducts}</span>
         </div>
 
       </nav>

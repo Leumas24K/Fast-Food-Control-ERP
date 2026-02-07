@@ -8,7 +8,7 @@ export default function Navbar() {
 
     return (
 
-        <header className='flex justify-between px-10 py-4 items-center text-fondo-dark font-bold bg-fondo-light shadow-2xl'>
+        <header className='flex justify-between px-10 py-4 items-center text-fondo-dark font-bold bg-fondo-light '>
 
 
             <div className="flex items-center gap-5">

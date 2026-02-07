@@ -4,7 +4,7 @@ import { useCart } from '../../context/CartContext';
 
 export default function Menu() {
 
-  const [products, setProducts] = useState([]);
+  const [product, setProduct] = useState([]);
   const [currentCategory, setCurrentCategory] = useState('todos');
   const {addToCart} = useCart (); 
 
@@ -20,7 +20,7 @@ export default function Menu() {
         }
         const data = await response.json();
         console.log('Productos importados exitosamente:', data);
-        setProducts(data);
+        setProduct(data);
 
       } catch (error) {
 
@@ -33,13 +33,13 @@ export default function Menu() {
 
   const leakedProducts = currentCategory === 'todos'
 
-    ? products : products.filter(p => p.category === currentCategory);
+    ? product : product.filter(p => p.category === currentCategory);
 
 
 
   return (
 
-    <section className='bg-fondo-light flex flex-col px-10 py-8 gap-10'>
+    <section className='bg-fondo-light flex flex-col px-10 pb-8 gap-10'>
 
       <NavbarMenu />
 
