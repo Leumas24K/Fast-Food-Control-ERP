@@ -1,9 +1,35 @@
 import React from 'react'
+import { Store, ChartNoAxesCombined, MonitorSmartphone } from 'lucide-react';
 
 export default function Services() {
+
+  const itemsServices = [
+
+    { icon: <Store size={40} color='white' />, bg:"bg-primary", tittle: "Inventario Inteligente", description: "Gestion a Tiempo Real." },
+    { icon: <ChartNoAxesCombined size={40} color='white' />,bg:"bg-fondo-dark", tittle: "Sistema de Pedidos (POS)", description: "Interfaz ágil para la toma de pedidos y envío a cocina." },
+    { icon: <MonitorSmartphone size={40} color='white' />,bg:"bg-secondary", tittle: "Módulo de Facturación", description: "Generación automática de tickets y cuentas de clientes." }
+  ]
+
   return (
-    <div>
-      <h1>soy la seccion de servicios</h1>
+
+    <div className='flex justify-center gap-10 p-10  bg-fondo-light '>
+
+      {itemsServices.map((item, index) => (
+
+        <div key={index} className='flex flex-col items-center  w-1/3 p-5 gap-6'>
+
+          <figure className={`${item.bg}  p-5 rounded-3xl shadow-xl/30`}>
+            {item.icon}
+          </figure>
+          <h1 className='text-fondo-dark text-center font-bold'>{item.tittle}</h1>
+
+          <p className='text-fondo-dark font-semibold text-center'>{item.description}</p>
+        </div>
+
+      ))}
+
     </div>
+
   )
 }
+
