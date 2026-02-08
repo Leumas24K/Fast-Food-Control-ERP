@@ -1,8 +1,10 @@
+import { Menu, PanelLeftClose, CircleUserRound, LayoutDashboard, ClipboardPenLine, Sofa, Receipt, LogOut } from 'lucide-react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
 
-import { Menu, PanelLeftClose, CircleUserRound, LayoutDashboard, LogOut } from 'lucide-react';
-
 export default function SideBar() {
+
+  const [open, setOpen] = useState(true);
 
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -10,40 +12,69 @@ export default function SideBar() {
     navigate('/login');
 
   };
+
+  const navItems = [
+    { tittle: "Dashboard General", icon: <LayoutDashboard />, route: '/dashboard-Admin' },
+    { tittle: "Menu", icon: <Menu />, route: '/dashboard-Admin/menu' },
+    { tittle: "Inventario", icon: <ClipboardPenLine />, route: '/dashboard-Admin/inventario' },
+    { tittle: "Mesas", icon: <Sofa />, route: '/dashboard-Admin/mesas' },
+    { tittle: "Facturacion", icon: <Receipt />, route: '/dashboard-Admin/facturacion' },
+
+  ]
+
+
   return (
 
-    <nav className="w-60 bg-blue-600 h-screen text-white flex flex-col justify-between gap-5 px-5 py-3">
+    <aside className={`bg-fondo-light h-screen flex flex-col  border-r border-slate-300 text-white duration-500 gap-5 px-5 pt-8 relative ${open ? "w-70" : "w-20"}`}>
 
-      <div className=' flex flex-col gap-5'>
-        <div className='flex items-center gap-2'>
-          <CircleUserRound size={40} color='white' />
-          <div>
+      <div className='text-fondo-dark'>
+        <PanelLeftClose
+          size={45}
+          onClick={() => setOpen(!open)}
+          className={` bg-fondo-light border-2 border-slate-300 p-2 rounded-full absolute duration-500 -right-6 top-8 cursor-pointer ${!open && "rotate-180"}`}
+        />
+      </div>
+
+      <div>
+        <div className='inline-flex gap-3 items-center text-fondo-dark'>
+          <CircleUserRound size={42} />
+          <div className={`${!open && "scale-0"}`}>
             <h2 className='font-bold'>Administrador</h2>
-            <p className='text-sm'>admin</p>
+            <h2 className='text-sm'>Admin</h2>
           </div>
         </div>
 
-        <ul className="grid gap-5 ">
-          <li className=" ">Menu</li>
-          <li className=" ">Mesas</li>
-          <li className=" ">Inventario</li>
-          <li className=" ">Facturacion</li>
-        </ul>
-      </div>
+        <nav className='mt-8 '>
+          <ul className='text-fondo-dark grid gap-5'>
+            {
+              navItems.map((item, index) => (
 
+                <li
+                  key={index}
+                  onClick={() => navigate(item.route)}
+                  className={`flex items-center gap-2 px-2 rounded-lg py-3 hover:bg-fondo-dark hover:text-white cursor-pointer duration-200 border-b border-slate-300`}>
+                  <span className='block float-left '>{item.icon ? item.icon : <LayoutDashboard />}</span >
+                  <span className={`${!open && "hidden"}`}>{item.tittle}</span>
+                </li>
+
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
 
       <button
         onClick={handleLogout}
-        className="flex items-center gap-2 hover:text-red-500 transition-colors"
+        className="flex items-center gap-2 mt-10 px-2 rounded-lg py-3 hover:bg-red-500 text-red-500 hover:text-white transition-colors"
       >
-        <LogOut size={20} />
-        Cerrar Sesión
+        <span className='block float-left '><LogOut size={20} /></span>
+        <span className={`${!open && "hidden"}`}>Cerrar Sesión</span>
       </button>
 
 
 
 
 
-    </nav>
+    </aside >
   )
 }

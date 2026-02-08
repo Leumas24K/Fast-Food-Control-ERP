@@ -5,6 +5,11 @@ import Menu from '../pages/Client/Menu';
 import NotFound from '../pages/NotFound';
 import Home from '../pages/Home';
 import DashboardAdmin from '../pages/Admin/DashboardAdmin';
+import AdminMenu from '../pages/Admin/AdminMenu';
+import AdminOverview from '../pages/Admin/AdminOverview';
+import AdminTables from '../pages/Admin/AdminTables';
+import AdminInventory from '../pages/Admin/AdminInventory';
+import AdminBilling from '../pages/Admin/AdminBilling';
 import DashboardWaiter from '../pages/Waiter/DashboardWaiter';
 import MainNavbar from './MainNavBar';
 import Cart from '../components/Menu/Cart'
@@ -28,9 +33,16 @@ export default function AppRouter() {
                             <Route path="*" element={<NotFound />} />
                         </Route>
                         
-                        {/* RUTAS PRIVADAS (Admin) */}
+                        {/* RUTAS PRIVADAS (Admin) - con rutas anidadas para módulos */}
                         <Route element={<PrivateRoute roleAuthorized={['admin']} />}>
-                            <Route path="/dashboard-Admin" element={<DashboardAdmin />} />
+                            <Route path="/dashboard-Admin" element={<DashboardAdmin />}>
+                                <Route index element={<AdminOverview />} />
+                                <Route path="overview" element={<AdminOverview />} />
+                                <Route path="menu" element={<AdminMenu />} />
+                                <Route path="mesas" element={<AdminTables />} />
+                                <Route path="inventario" element={<AdminInventory />} />
+                                <Route path="facturacion" element={<AdminBilling />} />
+                            </Route>
                         </Route>
 
                         {/* RUTAS PRIVADAS (Admin/Staff) */}
