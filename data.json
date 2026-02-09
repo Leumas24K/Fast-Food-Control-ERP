@@ -15,43 +15,53 @@
       "rol": "waiter"
     }
   ],
-
   "categories": [
-    { "id": 1, "name": "Hamburguesas", "category": "hamburguesas" },
-    { "id": 2, "name": "Bebidas", "category": "bebidas" },
-    { "id": 3, "name": "Acompañamientos", "category": "acompañamientos" }
+    {
+      "id": 1,
+      "name": "Hamburguesas",
+      "category": "hamburguesas"
+    },
+    {
+      "id": 2,
+      "name": "Bebidas",
+      "category": "bebidas"
+    },
+    {
+      "id": 3,
+      "name": "Acompañamientos",
+      "category": "acompañamientos"
+    }
   ],
-
   "commodity": [
     {
       "id": 1,
-      "name": "Papas",
-      "stock": 250,
-      "kilos": 500,
-      "imagen": "./assets/images/papas.jpg"
+      "name": "Lechugas",
+      "stock": 50,
+      "kilos": 200,
+      "imagen": "./assets/images/lechugas.jpg"
     },
-        {
+    {
       "id": 2,
       "name": "Tomate",
       "stock": 300,
       "kilos": 500,
       "imagen": "./assets/images/tomates.jpg"
     },
-        {
+    {
       "id": 3,
       "name": "Jamon",
       "stock": 150,
       "kilos": 500,
       "imagen": "./assets/images/jamon.jpg"
     },
-        {
+    {
       "id": 4,
       "name": "Queso",
       "stock": 350,
       "kilos": 500,
       "imagen": "./assets/images/queso.jpg"
     },
-        {
+    {
       "id": 5,
       "name": "Pan de Hamburguesa",
       "stock": 140,
@@ -59,13 +69,12 @@
       "imagen": "./assets/images/pan-de-hamburguesa.jpg"
     }
   ],
-
   "products": [
     {
       "id": 1,
       "name": "Monster Burger",
       "description": "Doble carne, queso cheddar fundido, bacon crujiente y salsa secreta.",
-      "price": 12.50,
+      "price": 12.5,
       "category": "hamburguesas",
       "stock": 50,
       "imagen": "./assets/images/hamburguesa-carne.jpg"
@@ -74,7 +83,7 @@
       "id": 2,
       "name": "Hamburguesa Krispy",
       "description": "La tradicional. Pollo empanizado, lechuga fresca, tomate y queso americano.",
-      "price": 8.90,
+      "price": 8.9,
       "category": "hamburguesas",
       "stock": 100,
       "imagen": "./assets/images/hamburguesa-pollo.jpg"
@@ -83,7 +92,7 @@
       "id": 3,
       "name": "Papas Rústicas",
       "description": "Papas cortadas a mano con piel, sazonadas con romero y sal marina.",
-      "price": 4.50,
+      "price": 4.5,
       "category": "acompañamientos",
       "stock": 200,
       "imagen": "./assets/images/papas-fritas.jpg"
@@ -92,7 +101,7 @@
       "id": 4,
       "name": "Nestea de Limón",
       "description": "Vaso de 500ml con hielo. Sabores a elección.",
-      "price": 2.50,
+      "price": 2.5,
       "category": "bebidas",
       "stock": 500,
       "imagen": "./assets/images/nestea-limon.jpg"
@@ -101,32 +110,114 @@
       "id": 5,
       "name": "Pepsi Cola",
       "description": "Vaso de 500ml con hielo. Sabores a elección.",
-      "price": 2.50,
+      "price": 2.5,
       "category": "bebidas",
       "stock": 500,
       "imagen": "./assets/images/pepsi-cola.jpg"
+    },
+    {
+      "id": 6,
+      "name": "perro calientes",
+      "description": "salchicha de 500gr con queso amarillo",
+      "price": 5.99,
+      "category": "perros",
+      "stock": 50,
+      "imagen": "https://media.istockphoto.com/id/143174721/es/foto/chili-queso-perro.jpg?s=612x612&w=0&k=20&c=K5rvkB3hE5QoR3DFypm7IqkA-L6d71rIh1aU4Em0hak="
+    },
+    {
+      "id": 7,
+      "name": "salchipapa",
+      "description": "salchipapa de 500gr de carne y pollo",
+      "price": 7.99,
+      "category": "fritos",
+      "stock": 10,
+      "imagen": "https://imag.bonviveur.com/emplatado-final-de-las-salchipapas.jpg"
+    },
+    {
+      "id": 8,
+      "name": "pizza grande",
+      "description": "pizza grande de 500gr de queso mozzarela",
+      "price": 54,
+      "category": "pizzas",
+      "stock": 55,
+      "imagen": "https://plus.unsplash.com/premium_photo-1673439304183-8840bd0dc1bf?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 10,
+      "name": "Glup",
+      "description": "cola negra de 1L",
+      "price": 5.99,
+      "category": "bebidas",
+      "stock": 100,
+      "imagen": "https://multinacionaldesabores.com/wp-content/uploads/banner-video-Glup-Cola.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Hamburguesa Mar y Tierra",
+      "description": "hamburguesa de mariscos y camarones 200gr",
+      "price": 7.99,
+      "category": "hamburguesas",
+      "stock": 40,
+      "imagen": "https://images.unsplash.com/photo-1571116260185-78bf30c0cc95?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "id": 66,
+      "name": "Ensalada cesar",
+      "description": "ensalada de lechuga romana y croûtons con jugo de limón, aceite de oliva, huevo, salsa Worcestershire, anchoas, pollo, ajo, mostaza de Dijon, queso parmesano y pimienta negra.",
+      "price": 6.98,
+      "category": "ensaladas",
+      "stock": 65,
+      "imagen": "https://images.unsplash.com/photo-1746211108786-ca20c8f80ecd?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZW5zYWxhZGElMjBjZXNhcnxlbnwwfHwwfHx8MA%3D%3D"
     }
   ],
-
   "tables": [
-    { "id": 1, "name": "Mesa 1", "capacity": 2, "status": "disponible" },
-    { "id": 2, "name": "Mesa 2", "capacity": 4, "status": "ocupada" },
-    { "id": 3, "name": "Mesa 3", "capacity": 4, "status": "disponible" },
-    { "id": 4, "name": "Barra", "capacity": 1, "status": "disponible" }
+    {
+      "id": 1,
+      "name": "Mesa 1",
+      "capacity": 2,
+      "status": "disponible"
+    },
+    {
+      "id": 2,
+      "name": "Mesa 2",
+      "capacity": 4,
+      "status": "ocupada"
+    },
+    {
+      "id": 3,
+      "name": "Mesa 3",
+      "capacity": 4,
+      "status": "disponible"
+    },
+    {
+      "id": 4,
+      "name": "Barra",
+      "capacity": 1,
+      "status": "disponible"
+    }
   ],
-
   "orders": [
     {
       "id": "5001",
       "client": "Carlos Invitado",
       "table": 2,
       "order": [
-        { "id_product": 1, "name": "Monster Burger", "quantity": 2, "price": 12.50 },
-        { "id_product": 4, "name": "Soda Refrescante", "quantity": 2, "price": 2.50 }
+        {
+          "id_product": 1,
+          "name": "Monster Burger",
+          "quantity": 2,
+          "price": 12.5
+        },
+        {
+          "id_product": 4,
+          "name": "Soda Refrescante",
+          "quantity": 2,
+          "price": 2.5
+        }
       ],
-      "total": 30.00,
+      "total": 30,
       "date": "2023-10-25T14:30:00.000Z",
-      "status": "pendiente" 
+      "status": "pendiente"
     }
   ]
 }
