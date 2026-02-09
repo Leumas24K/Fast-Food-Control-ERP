@@ -16,6 +16,7 @@ import Cart from '../components/Menu/Cart'
 import { AuthProvider } from '../context/AuthContext';
 import { CartProvider } from '../context/CartContext';
 import PrivateRoute from './PrivateRoute';
+import AdminOrders from '../pages/Admin/AdminOrders';
 
 export default function AppRouter() {
     return (
@@ -40,6 +41,7 @@ export default function AppRouter() {
                                 <Route path="overview" element={<AdminOverview />} />
                                 <Route path="menu" element={<AdminMenu />} />
                                 <Route path="mesas" element={<AdminTables />} />
+                                <Route path="ordenes" element={<AdminOrders />} />
                                 <Route path="inventario" element={<AdminInventory />} />
                                 <Route path="facturacion" element={<AdminBilling />} />
                             </Route>

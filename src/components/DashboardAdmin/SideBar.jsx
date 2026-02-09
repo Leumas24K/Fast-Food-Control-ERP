@@ -1,4 +1,4 @@
-import { Menu, PanelLeftClose, CircleUserRound, LayoutDashboard, ClipboardPenLine, Sofa, Receipt, LogOut } from 'lucide-react';
+import { Menu, PanelLeftClose, CircleUserRound, LayoutDashboard, ClipboardPenLine, Sofa, Receipt,ListTodo , LogOut } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 
@@ -18,8 +18,9 @@ export default function SideBar() {
     { tittle: "Menu", icon: <Menu />, route: '/dashboard-Admin/menu' },
     { tittle: "Inventario", icon: <ClipboardPenLine />, route: '/dashboard-Admin/inventario' },
     { tittle: "Mesas", icon: <Sofa />, route: '/dashboard-Admin/mesas' },
+    { tittle: "Ordenes", icon: <ListTodo />, route: '/dashboard-Admin/ordenes' },
     { tittle: "Facturacion", icon: <Receipt />, route: '/dashboard-Admin/facturacion' },
-
+    
   ]
 
 
@@ -65,7 +66,7 @@ export default function SideBar() {
 
       <button
         onClick={handleLogout}
-        className="flex items-center gap-2 mt-10 px-2 rounded-lg py-3 hover:bg-red-500 text-red-500 hover:text-white transition-colors"
+        className="flex items-center gap-2 mt-4 px-2 rounded-lg py-3 hover:bg-red-500 text-red-500 hover:text-white transition-colors"
       >
         <span className='block float-left '><LogOut size={20} /></span>
         <span className={`${!open && "hidden"}`}>Cerrar Sesión</span>
