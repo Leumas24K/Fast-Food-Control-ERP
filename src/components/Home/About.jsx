@@ -1,6 +1,6 @@
-import samuel from "../assets/images/samuel-sanchez.jpeg"
-import sofi from "../assets/images/sofia-luis.jpeg"
-import jefferson from "../assets/images/jefferson.jpeg"
+import samuel from "../../assets/images/samuel-sanchez.jpeg"
+import sofi from "../../assets/images/sofia-luis.jpeg"
+import jefferson from "../../assets/images/jefferson.jpeg"
 
 export default function About() {
 

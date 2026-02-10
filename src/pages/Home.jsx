@@ -1,51 +1,60 @@
-import { Link } from 'react-router'
-import CardHome from '../components/Home/CardHome'
-import iconFood from '../assets/icons/icon_food.svg'
-import iconManage from '../assets/icons/icon-manage.svg'
+import Services from '../components/Home/Services'
+import About from '../components/Home/About'
+import Contact from '../components/Home/Contact'
+import Footer from '../components/Home/Footer'
+import Action from '../components/Home/Action'
+export default function LandingPage() {
 
-export default function Home() {
-    
   return (
-        <section className='bg-fondo-light text-center min-h-screen flex flex-col md:flex-row md:items-center md:justify-center  '>
 
-            <div className='bg-fondo-light flex-1 flex flex-col'>
-                <CardHome
+    <main>
 
-                    icon={iconFood}
-                    tittle={"¡Quiero Comer!"}
-                    description={"Explora nuestro menú, personaliza tu pedido y paga de forma rápida."}
+      <header id='Inicio' className='min-h-screen bg-fondo-dark text-center flex flex-col items-center justify-center p-10 gap-10 overflow-hidden relative'>
+        <div className="absolute w-96 h-96 top-[-10%] left-[-10%] blur-3xl opacity-10 z-0 bg-primary rounded-full"></div>
+        <div className="absolute w-96 h-96 bottom-[-10%] right-[-10%] blur-3xl opacity-10 z-0 bg-indigo-600 rounded-full"></div>
 
-                />
+        <span className="text-secondary font-bold uppercase">FastFood Pro Management v1.0</span>
 
-                <button>
-                    <Link
-                        to="/menu"
-                        className='bg-primary hover:bg-amber-600 px-6 py-3 rounded-full hover:scale-105 transition-all text-white font-semibold'
-                    >Ver Menú
-                    </Link>
-                </button>
-            </div>
+        <h1 className="text-white text-6xl md:text-7xl font-extrabold" >Sabor Real a la <br />
 
-            <div className='bg-fondo-light flex-1 mt-10 md:mt-0 flex flex-col '>
-                <CardHome
+          <span className="text-primary">Velocidad </span>
+          <span className="text-secondary">Digital.</span>
 
-                    icon={iconManage}
-                    tittle={"Acceso Staff"}
-                    description={"Gestión de inventario, control de mesas y procesamiento de pedidos."}
+        </h1>
 
-                />
+        <p className="text-lg font-Inter text-slate-400 max-w-2xl">Bienvenido a la nueva era de <strong>FastFood Pro</strong>. Gestiona tu negocio con precisión quirúrgica
+          o disfruta de nuestro menú diseñado para los amantes de la verdadera comida rápida.
+        </p>
 
-                <button>
-                    <Link
-                        to="/login"
-                        className='bg-indigo-500 hover:bg-indigo-600 px-6 py-3 rounded-full hover:scale-105 transition-all text-white font-semibold'
-                    >Iniciar Sesion
-                    </Link>
-                </button>
+        <a href='#Accion' className="bg-indigo-400 text-white px-6 py-3 rounded-2xl z-20 hover:bg-indigo-500 active:scale-95">Comienza la Experiencia</a>
+      </header>
 
-            </div>
+      <section id='Accion'>
+        <Action/>
+      </section>
 
-        </section>
+      <section id='Servicios'>
+
+        <Services/>
+
+      </section>
+
+      <section id='Nosotros'>
+        
+        <About/>
+        
+      </section>
+
+      <section id='Contactos'>
+        <Contact/>
+      </section>
+
+
+      <footer>
+        <Footer/>
+      </footer>
+
+    </main>
   )
 }
 
