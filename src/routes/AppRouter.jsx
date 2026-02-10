@@ -1,9 +1,8 @@
 import { Routes, Route, BrowserRouter } from 'react-router';
-import LandingPage from '../pages/LandingPage';
+import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Menu from '../pages/Client/Menu';
 import NotFound from '../pages/NotFound';
-import Home from '../pages/Home';
 import DashboardAdmin from '../pages/Admin/DashboardAdmin';
 import AdminMenu from '../pages/Admin/AdminMenu';
 import AdminOverview from '../pages/Admin/AdminOverview';
@@ -26,8 +25,7 @@ export default function AppRouter() {
                     <Routes>
                         {/* RUTAS PÚBLICAS (Cualquiera accede) */}
                         <Route element={<MainNavbar />}>
-                            <Route path="/" element={<LandingPage />} />
-                            <Route path="/home" element={<Home />} />
+                            <Route path="/" element={<Home />} />
                             <Route path="/menu" element={<Menu />} />
                             <Route path="/cart" element={<Cart />} />
                             <Route path="/login" element={<Login />} />                           

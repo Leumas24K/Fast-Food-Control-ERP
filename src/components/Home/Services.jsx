@@ -12,18 +12,19 @@ export default function Services() {
 
   return (
 
-    <div className='flex justify-center gap-10 p-10  bg-fondo-light '>
+    <div className='flex flex-col md:flex-row p-10 gap-20 justify-center  bg-fondo-light '>
 
       {itemsServices.map((item, index) => (
 
-        <div key={index} className='flex flex-col items-center  w-1/3 p-5 gap-6'>
+        <div key={index} className='flex flex-col text-center items-center justify-center gap-5  '>
 
           <figure className={`${item.bg}  p-5 rounded-3xl shadow-xl/30`}>
             {item.icon}
           </figure>
-          <h1 className='text-fondo-dark text-center font-bold'>{item.tittle}</h1>
+          <h1 className='text-fondo-dark text-2xl font-bold '>{item.tittle}</h1>
 
-          <p className='text-fondo-dark font-semibold text-center'>{item.description}</p>
+          <p className='text-slate-600 text-sm px-50 md:px-0 font-semibold '>{item.description}</p>
+
         </div>
 
       ))}
