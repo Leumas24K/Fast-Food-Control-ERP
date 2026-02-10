@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 import { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, AlertTriangle } from 'lucide-react';
 
 export default function AdminInventario() {
 
@@ -14,6 +14,10 @@ export default function AdminInventario() {
 
     // la ventana de crear y editar estan cnectadas, con estas variables se sabe cuando se esta creando o cuando se esta editando
     const [isEditing, setIsEditing] = useState(false);
+
+    // --- ESTADOS PARA ELIMINAR ---
+    const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
+    const [productToDelete, setProductToDelete] = useState(null);
 
     const [id, setId] = useState("");
     const [name, setName] = useState("");
@@ -127,6 +131,23 @@ export default function AdminInventario() {
             .catch((error) => console.error("Error al actualizar:", error));
     };
 
+    //DELETE: eliminiar
+    const handleDelete = () => {
+        if (!productToDelete) return;
+
+        fetch(`${API_URL}/${productToDelete.id}`, {
+            method: 'DELETE',
+        })
+        .then((response) => {
+            if (response.ok) {
+                setIsOpenDeleteModal(false);
+                setProductToDelete(null);
+                fetchCommodity(); // Refresca la tabla
+            }
+        })
+        .catch((error) => console.log("Error al eliminar:", error));
+    }
+
 
 
 
@@ -173,7 +194,7 @@ export default function AdminInventario() {
                                 {/* ACCIÓN */}
                                 <td className=" p-5 flex gap-5 items-center justify-center text-white">
                                     <button onClick={() => handleEditCommodity(com)} className="bg-blue-500 px-5 py-2 rounded-2xl cursor-pointer">Editar</button>
-                                    <button className="bg-red-500 px-5 py-2 rounded-2xl cursor-pointer">Eliminar</button>
+                                    <button onClick={() => { setProductToDelete(com); setIsOpenDeleteModal(true); }} className="bg-red-500 px-5 py-2 rounded-2xl cursor-pointer">Eliminar</button>
                                 </td>
                             </tr>
                         ))}
@@ -278,6 +299,28 @@ export default function AdminInventario() {
                         </form>
                     </div>
 
+                </div>
+            )}
+            {/* MODAL DE ELIMINACIÓN */}
+            {isOpenDeleteModal && (
+                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-60 p-4">
+
+                    <div className='bg-white w-full max-w-sm rounded-2xl p-8 shadow-2xl text-center relative'>
+                        <div
+                            onClick={() => { setIsOpenDeleteModal(false) }}
+                            className='absolute right-3 top-5'>
+                            <X className='hover:text-red-600 ' />
+                        </div>
+                        <div className='bg-red-100 w-16 h-16 rounded-full flex justify-center items-center mx-auto mb-4'>
+                            <AlertTriangle className='text-red-600 w-8 h-8' />
+                        </div>
+                        <h2 className='text-xl font-bold'>¿Eliminar producto?</h2>
+                        <p className='text-gray-500 mt-2'>Estás por borrar <strong>{productToDelete?.name}</strong>.</p>
+                        <div className='flex gap-4 mt-8'>
+                            <button onClick={() => setIsOpenDeleteModal(false)} className='flex-1 bg-gray-200 py-2 rounded-xl font-semibold'>Cancelar</button>
+                            <button onClick={handleDelete} className='flex-1 bg-red-500 py-2 rounded-xl text-white font-semibold'>Eliminar</button>
+                        </div>
+                    </div>
                 </div>
             )}
         </div>

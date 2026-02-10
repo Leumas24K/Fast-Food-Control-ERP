@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 import { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, AlertTriangle } from 'lucide-react';
 
 
 export default function AdminMenu() {
@@ -11,10 +11,14 @@ export default function AdminMenu() {
     // Para saber cuando la ventana tipo modal esta abierta o cerrada
     const [showCreateModal, setShowCreateModal] = useState(false);
 
-    // La ventana de crear y editar estan cnectadas, con estas variables se sabe cuando se esta creando o cuando se esta editando
+    // La ventana de crear y editar estan conectadas, con estas variables se sabe cuando se esta creando o cuando se esta editando
     const [isEditing, setIsEditing] = useState(false);
 
+    // --- ESTADOS PARA ELIMINAR ---
+    const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
+    const [productToDelete, setProductToDelete] = useState(null);
 
+    // ---ESTADOS DEL FORMULARIO ---
     const [id, setId] = useState("");
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
@@ -36,6 +40,7 @@ export default function AdminMenu() {
         setIsEditing(false);
     };
 
+    //boton para editar los productos con el id seleccionado
     const handleEditProduct = (product) => {
         setId(product.id);
         setName(product.name);
@@ -49,6 +54,7 @@ export default function AdminMenu() {
         setShowCreateModal(true); // Abrimos el la ventana tipo modal
     };
 
+    //GET: mostrar
     const fetchProducts = async () => {
         try {
             const response = await fetch(API_URL);
@@ -63,9 +69,7 @@ export default function AdminMenu() {
         fetchProducts();
     }, []);
 
-
-
-
+    //boton para crear un nuevo producto
     const handleCreateProduct = (e) => {
 
         e.preventDefault();
@@ -106,7 +110,7 @@ export default function AdminMenu() {
 
     }
 
-     // PUT: Editar
+    // PUT: Editar
     const handleUpdateProduct = (e) => {
 
         e.preventDefault();
@@ -138,6 +142,23 @@ export default function AdminMenu() {
             .catch((error) => console.error("Error al actualizar:", error));
     };
 
+    //DELETE: eliminiar
+    const handleDelete = () => {
+        if (!productToDelete) return;
+
+        fetch(`${API_URL}/${productToDelete.id}`, {
+            method: 'DELETE',
+        })
+            .then((response) => {
+                if (response.ok) {
+                    setIsOpenDeleteModal(false);
+                    setProductToDelete(null);
+                    fetchProducts(); // Refresca la tabla
+                }
+            })
+            .catch((error) => console.log("Error al eliminar:", error));
+    };
+
 
 
     return (
@@ -146,7 +167,7 @@ export default function AdminMenu() {
             <p> Aquí puedes gestionar los productos del menú.</p>
 
             <button
-                onClick={() =>{ resetForm(); setShowCreateModal(true); }}
+                onClick={() => { resetForm(); setShowCreateModal(true); }}
                 className="bg-green-500 mt-15 px-5 py-2 rounded-2xl cursor-pointer text-white">Agregar Nuevo Producto
             </button>
 
@@ -184,7 +205,7 @@ export default function AdminMenu() {
                                 {/* ACCIÓN */}
                                 <td className=" p-5 flex gap-5 items-center justify-center text-center text-white">
                                     <button onClick={() => handleEditProduct(prod)} className="bg-blue-500 px-5 py-2 rounded-2xl cursor-pointer">Editar</button>
-                                    <button className="bg-red-500 px-5 py-2 rounded-2xl cursor-pointer">Eliminar</button>
+                                    <button onClick={() => { setProductToDelete(prod); setIsOpenDeleteModal(true); }} className="bg-red-500 px-5 py-2 rounded-2xl cursor-pointer">Eliminar</button>
                                 </td>
                             </tr>
                         ))}
@@ -201,7 +222,7 @@ export default function AdminMenu() {
                         <div
                             onClick={() => { setShowCreateModal(false); resetForm(); }}
                             className='absolute right-3 top-5'>
-                            <X className='hover:text-red-600 '/>
+                            <X className='hover:text-red-600 ' />
                         </div>
                         <h2 className='text-center font-bold text-2xl mt-5'>Nuevo producto </h2>
 
@@ -319,6 +340,29 @@ export default function AdminMenu() {
                                 </button>
                             </div>
                         </form>
+                    </div>
+                </div>
+            )}
+            
+            {/* MODAL DE ELIMINACIÓN */}
+            {isOpenDeleteModal && (
+                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-60 p-4">
+
+                    <div className='bg-white w-full max-w-sm rounded-2xl p-8 shadow-2xl text-center relative'>
+                        <div
+                            onClick={() => { setIsOpenDeleteModal(false) }}
+                            className='absolute right-3 top-5'>
+                            <X className='hover:text-red-600 ' />
+                        </div>
+                        <div className='bg-red-100 w-16 h-16 rounded-full flex justify-center items-center mx-auto mb-4'>
+                            <AlertTriangle className='text-red-600 w-8 h-8' />
+                        </div>
+                        <h2 className='text-xl font-bold'>¿Eliminar producto?</h2>
+                        <p className='text-gray-500 mt-2'>Estás por borrar <strong>{productToDelete?.name}</strong>.</p>
+                        <div className='flex gap-4 mt-8'>
+                            <button onClick={() => setIsOpenDeleteModal(false)} className='flex-1 bg-gray-200 py-2 rounded-xl font-semibold'>Cancelar</button>
+                            <button onClick={handleDelete} className='flex-1 bg-red-500 py-2 rounded-xl text-white font-semibold'>Eliminar</button>
+                        </div>
                     </div>
                 </div>
             )}

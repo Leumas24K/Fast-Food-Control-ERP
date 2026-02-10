@@ -23,7 +23,7 @@ export default function Services() {
           </figure>
           <h1 className='text-fondo-dark text-2xl font-bold '>{item.tittle}</h1>
 
-          <p className='text-slate-600 text-sm px-50 md:px-0 font-semibold '>{item.description}</p>
+          <p className='text-slate-600 text-sm px-10 md:px-0 font-semibold '>{item.description}</p>
 
         </div>
 
