@@ -1,30 +1,91 @@
+import { useState } from 'react';
 import { useCart } from '../../context/CartContext';
 import { Trash, Minus, Plus, } from 'lucide-react';
 import NavbarMenu from './NavbarMenu';
 
 export default function Cart() {
 
-  const { cart, updateQuantity, deleteProduct } = useCart();
+  const API_URL = ("http://localhost:8000/orders");
 
+  const { cart, updateQuantity, deleteProduct, clearCart } = useCart();
+
+
+
+  // 3. Estado para saber si se está enviando y bloquear el botón
+  const [isSending, setIsSending] = useState(false);
+
+  //boton para incremetar la cantidad del producto
   const handleIncreaseQuantity = (productId) => {
 
     updateQuantity(productId, 1)
 
   }
-
+  //boton para disminuir la cantidad del producto
   const handleDecreaseQuantity = (productId) => {
 
+   
     const product = cart.find((item) => item.id === productId)
     if (product.quantity > 1) {
 
       updateQuantity(productId, -1)
     }
   }
+  //constante del iva
   const iva = 2;
+  //constante del subtotal
   const subTotal = cart.reduce((acc, product) =>
     acc + product.price * product.quantity, 0
   );
+  //constante del total de la factura
   const total = subTotal + iva;
+
+  //boton para enviar la orden que esta en el carrito
+  const handleSendOrder = async () => {
+   
+
+    if (cart.length === 0) return;
+
+    setIsSending(true); // esto es para bloquear el boton
+
+    const newOrder = {
+
+      date: new Date().toISOString(),
+      status: "pendiente",
+      client: "Mesa 1", // esto se puede cambiar despues
+
+      //se utiliza este map dentro de order para obtener los datos(id,name,cantidad,precio) de los productos
+      order: cart.map(item => ({
+        id_product: item.id,
+        name: item.name,
+        quantity: item.quantity,
+        price: item.price
+      })),
+      total: total.toFixed(2)
+    };
+
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newOrder)
+      })
+
+      if (response.ok) {
+        alert("¡Pedido enviado a cocina!");
+        clearCart();
+      }
+
+    } catch (error) {
+      console.error("Error enviando orden:", error);
+      alert("Error de conexión");
+
+    } finally {
+      setIsSending(false); // esto desbloquea el boton
+    }
+
+  };
 
   return (
 
@@ -113,7 +174,13 @@ export default function Cart() {
               <p className='flex justify-between border-b-2 py-1 border-slate-300'>Total Parcial: <span className='font-bold'>${subTotal.toFixed(2)}</span> </p>
               <p className='flex justify-between border-b-2 py-1 border-slate-300'>iva: <span className='font-bold'>${iva.toFixed(2)}</span> </p>
               <p className='flex justify-between border-b-2 py-1 border-slate-300'>Total: <span className='font-bold'>${total.toFixed(2)}</span></p>
-              <button className='bg-fondo-dark text-white px-5 py-3 rounded-lg  font-bold'>ENVIAR PAGO</button>
+              <button
+                onClick={handleSendOrder}
+                disabled={isSending}
+                className={`px-5 py-3 rounded-lg font-bold text-white transition-all ${isSending ? 'bg-gray-400 cursor-wait' : 'bg-fondo-dark hover:bg-slate-800'}`}
+              >
+                {isSending ? "ENVIANDO..." : "ENVIAR PAGO"}
+              </button>
             </div>
           </div>
 

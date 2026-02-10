@@ -8,9 +8,7 @@ export default function Navbar() {
 
     return (
 
-        <header className='flex justify-between px-10 py-4 items-center text-fondo-dark font-bold bg-fondo-light '>
-
-
+        <header className='flex justify-between px-10 py-4 items-center text-fondo-dark font-bold bg-fondo-light sticky top-0 z-50 '>
 
             <Link
                 to="/"
@@ -26,8 +24,6 @@ export default function Navbar() {
                     <li className="px-3 py-2 hover:bg-primary hover:text-white rounded-3xl hover:scale-105 transition-all"><a href="#Contactos">Contactos</a></li>
                 </ul>
             </nav>
-
-
 
             <div className="max-lg:hidden flex gap-3 items-center">
 

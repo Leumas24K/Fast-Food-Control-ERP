@@ -1,16 +1,18 @@
-import { Menu, PanelLeftClose, CircleUserRound, LayoutDashboard, ClipboardPenLine, Sofa, Receipt,ListTodo , LogOut } from 'lucide-react';
+import { Menu, PanelLeftClose, CircleUserRound, LayoutDashboard, ClipboardPenLine, Sofa, Receipt, ListTodo, LogOut } from 'lucide-react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { useAuth } from '../../context/AuthContext';
 
 export default function SideBar() {
 
   const [open, setOpen] = useState(true);
-
+  const { logout, user } = useAuth();
+  
   const navigate = useNavigate();
+
   const handleLogout = () => {
-
+    logout();
     navigate('/login');
-
   };
 
   const navItems = [
@@ -20,28 +22,28 @@ export default function SideBar() {
     { tittle: "Mesas", icon: <Sofa />, route: '/dashboard-Admin/mesas' },
     { tittle: "Ordenes", icon: <ListTodo />, route: '/dashboard-Admin/ordenes' },
     { tittle: "Facturacion", icon: <Receipt />, route: '/dashboard-Admin/facturacion' },
-    
+
   ]
 
 
   return (
 
-    <aside className={`bg-fondo-light h-screen flex flex-col  border-r border-slate-300 text-white duration-500 gap-5 px-5 pt-8 relative ${open ? "w-70" : "w-20"}`}>
+    <aside className={`bg-fondo-light h-screen flex flex-col  border-r border-slate-300 text-white duration-500 gap-5 px-5 pt-8  sticky top-0 self-start ${open ? "w-70" : "w-20"}`}>
 
-      <div className='text-fondo-dark'>
+      <button className='text-fondo-dark'>
         <PanelLeftClose
           size={45}
           onClick={() => setOpen(!open)}
           className={` bg-fondo-light border-2 border-slate-300 p-2 rounded-full absolute duration-500 -right-6 top-8 cursor-pointer ${!open && "rotate-180"}`}
         />
-      </div>
+      </button>
 
       <div>
         <div className='inline-flex gap-3 items-center text-fondo-dark'>
           <CircleUserRound size={42} />
           <div className={`${!open && "scale-0"}`}>
-            <h2 className='font-bold'>Administrador</h2>
-            <h2 className='text-sm'>Admin</h2>
+            <h2 className='font-bold'>{user.name}</h2>
+            <h2 className='text-sm'>{user.rol}</h2>
           </div>
         </div>
 
@@ -71,10 +73,6 @@ export default function SideBar() {
         <span className='block float-left '><LogOut size={20} /></span>
         <span className={`${!open && "hidden"}`}>Cerrar Sesión</span>
       </button>
-
-
-
-
 
     </aside >
   )
