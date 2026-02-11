@@ -56,7 +56,7 @@ export default function Contact() {
                 required></textarea>
             </div>
 
-            <button type="submit" className='w-100 md:w-auto bg-primary text-white px-8 py-3 rounded-lg mt-5 font-bold hover:bg-secondary'>
+            <button type="submit" className='w-full md:w-auto bg-primary text-white px-8 py-3 rounded-lg mt-5 font-bold hover:bg-secondary'>
               Enviar
             </button>
 
