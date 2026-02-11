@@ -22,9 +22,9 @@ export default function About() {
         key={index}
         className="bg-fondo-light rounded-2xl  p-6 md:p-8 flex flex-col items-center w-full max-w-sm">
 
-        <div className="relative mb-4">
-          <img src={item.photo}className="w-24 h-24 rounded-full border-4 border-primary object-cover"/>
-        </div>
+        <figure className="relative mb-4">
+          <img src={item.photo} className="w-24 h-24 rounded-full border-4 border-primary object-cover"/>
+        </figure>
 
         <h1 className="text-xl font-bold text-fondo-dark mb-2 text-center">{item.names}</h1>
 
