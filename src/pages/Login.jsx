@@ -19,7 +19,7 @@ const handleSubmit = async (e) => {
             const users = await response.json();
 
             if (users.length > 0) {
-                // Si encontró coincidencia, el primer elemento del array es nuestro usuario
+                // Si encuentra coincidencia, el primer elemento del array es nuestro usuario
                 const userFound = users[0];
                 
                 // Guardamos en el contexto

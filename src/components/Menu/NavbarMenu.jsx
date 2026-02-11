@@ -10,7 +10,7 @@ export default function NavbarMenu() {
   )
 
   return (
-    <div>
+    <header>
       <nav className='flex justify-between items-center py-4'>
 
         <div className='flex gap-2 items-center'>
@@ -30,6 +30,6 @@ export default function NavbarMenu() {
         </div>
 
       </nav>
-    </div>
+    </header>
   )
 }

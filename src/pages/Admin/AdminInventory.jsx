@@ -152,7 +152,7 @@ export default function AdminInventario() {
 
 
     return (
-        <div className='pl-2'>
+        <main className='pl-2'>
             <h1 className="text-2xl font-bold">Módulo: Inventario</h1>
             <p> Aquí puedes gestionar el inventario.</p>
             <button
@@ -160,7 +160,7 @@ export default function AdminInventario() {
                 className="bg-green-500 mt-15 px-5 py-2 rounded-2xl cursor-pointer text-white">Agregar Nueva Mercancia
             </button>
 
-            <div >
+            <section >
                 <table className='w-full border-separate border-spacing-y-3 overflow-x-auto'>
                     <thead>
                         <tr className='bg-white shadow-sm'>
@@ -200,11 +200,11 @@ export default function AdminInventario() {
                         ))}
                     </tbody>
                 </table>
-            </div>
+            </section>
 
             {/*CREAR UN NUEVO PRODUCTO AL INVENTARIO */}
             {showCreateModal && (
-                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-50 p-4 transition-all duration-300">
+                <section className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-50 p-4 transition-all duration-300">
                     <div className='bg-white border w-full max-w-md border-slate-300 rounded-2xl p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto'>
                         <div
                             onClick={() => { setShowCreateModal(false); resetForm(); }}
@@ -299,11 +299,11 @@ export default function AdminInventario() {
                         </form>
                     </div>
 
-                </div>
+                </section>
             )}
             {/* MODAL DE ELIMINACIÓN */}
             {isOpenDeleteModal && (
-                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-60 p-4">
+                <section className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-60 p-4">
 
                     <div className='bg-white w-full max-w-sm rounded-2xl p-8 shadow-2xl text-center relative'>
                         <div
@@ -321,9 +321,9 @@ export default function AdminInventario() {
                             <button onClick={handleDelete} className='flex-1 bg-red-500 py-2 rounded-xl text-white font-semibold'>Eliminar</button>
                         </div>
                     </div>
-                </div>
+                </section>
             )}
-        </div>
+        </main>
 
 
 

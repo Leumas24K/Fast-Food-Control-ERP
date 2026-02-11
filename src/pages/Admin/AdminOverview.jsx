@@ -50,10 +50,10 @@ export default function AdminOverview() {
   return (
 
     <main className="ml-5">
-      <div>
+      <section>
         <h1 className="text-2xl text-fondo-dark font-bold mb-6">Dashboard General</h1>
         <p className='text-sm text-slate-600 font-Inter'>Resumen de la actividad: ventas, alertas e indicadores clave.</p>
-      </div>
+      </section>
       {/* seccion para ver los datos generales del dashboard */}
       <section className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
 

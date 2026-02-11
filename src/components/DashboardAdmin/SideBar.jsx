@@ -38,7 +38,7 @@ export default function SideBar() {
         />
       </button>
 
-      <div>
+      <section>
         <div className='inline-flex gap-3 items-center text-fondo-dark'>
           <CircleUserRound size={42} />
           <div className={`${!open && "scale-0"}`}>
@@ -64,7 +64,7 @@ export default function SideBar() {
             }
           </ul>
         </nav>
-      </div>
+      </section>
 
       <button
         onClick={handleLogout}

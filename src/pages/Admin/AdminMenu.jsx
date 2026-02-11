@@ -162,7 +162,7 @@ export default function AdminMenu() {
 
 
     return (
-        <div className='transition-all duration-300'>
+        <main className='transition-all duration-300'>
             <h1 className="text-2xl font-bold">Módulo: Menú (Administrador)</h1>
             <p> Aquí puedes gestionar los productos del menú.</p>
 
@@ -171,7 +171,7 @@ export default function AdminMenu() {
                 className="bg-green-500 mt-15 px-5 py-2 rounded-2xl cursor-pointer text-white">Agregar Nuevo Producto
             </button>
 
-            <div className='overflow-x-auto'>
+            <section className='overflow-x-auto'>
                 <table className='w-full border-separate border-spacing-y-3'>
                     <thead>
                         <tr className='bg-white shadow-sm'>
@@ -212,11 +212,11 @@ export default function AdminMenu() {
                     </tbody>
                 </table>
 
-            </div>
+            </section>
 
             {/*CREAR UN NUEVO PRODCTO AL MENU */}
             {showCreateModal && (
-                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-50 p-4">
+                <section className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-50 p-4">
                     <div className='bg-white border w-full max-w-md border-slate-300 rounded-2xl p-8 relative shadow-2xl max-h-[90vh] overflow-y-auto'>
 
                         <div
@@ -341,12 +341,12 @@ export default function AdminMenu() {
                             </div>
                         </form>
                     </div>
-                </div>
+                </section>
             )}
             
             {/* MODAL DE ELIMINACIÓN */}
             {isOpenDeleteModal && (
-                <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-60 p-4">
+                <section className="fixed inset-0 bg-black/50 backdrop-blur-sm flex justify-center items-center z-60 p-4">
 
                     <div className='bg-white w-full max-w-sm rounded-2xl p-8 shadow-2xl text-center relative'>
                         <div
@@ -364,8 +364,8 @@ export default function AdminMenu() {
                             <button onClick={handleDelete} className='flex-1 bg-red-500 py-2 rounded-xl text-white font-semibold'>Eliminar</button>
                         </div>
                     </div>
-                </div>
+                </section>
             )}
-        </div>
+        </main>
     )
 }

@@ -53,7 +53,7 @@ export default function DashboardWaiter() {
         </div>
       </header>
 
-      <div className='overflow-x-auto px-10'>
+      <section className='overflow-x-auto px-10'>
         <table className='w-full border-separate border-spacing-y-3'>
           <thead>
             <tr className='bg-white shadow-sm text-center'>
@@ -80,7 +80,7 @@ export default function DashboardWaiter() {
 
         </table>
 
-      </div>
+      </section>
     </main>
   )
 }

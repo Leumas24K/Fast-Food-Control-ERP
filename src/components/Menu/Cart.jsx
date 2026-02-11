@@ -90,7 +90,7 @@ export default function Cart() {
   return (
 
 
-    <div className='px-10 mt-2'>
+    <main className='px-10 mt-2'>
       <NavbarMenu />
       <h2 className='text-3xl text-fondo-dark font-bold'>TU <span className='text-primary'>CARRITO</span></h2>
       {(!cart || cart.length) === 0 ?
@@ -98,7 +98,7 @@ export default function Cart() {
           <p className='text-center text-3xl text-gray-300'>Tu carrito está vacío</p>
         ) : (
 
-          <div className='overflow-x-auto'>
+          <section className='overflow-x-auto'>
             <table className='w-full border-separate border-spacing-y-3'>
               <thead>
                 <tr className='bg-white shadow-sm'>
@@ -182,11 +182,11 @@ export default function Cart() {
                 {isSending ? "ENVIANDO..." : "ENVIAR PAGO"}
               </button>
             </div>
-          </div>
+          </section>
 
         )
       }
-    </div>
+    </main>
 
   )
 }

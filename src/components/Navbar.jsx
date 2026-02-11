@@ -46,7 +46,7 @@ export default function Navbar() {
                 <Menu />
             </button>
 
-            <div className={`flex flex-col gap-5 md:hidden bg-white absolute top-14 left-0 w-full z-20 transition-all duration-300 ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
+            <nav className={`flex flex-col gap-5 md:hidden bg-white absolute top-14 left-0 w-full z-20 transition-all duration-300 ${isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
                 <ul className="w-full text-center">
 
                     <li className="px-3 py-4 w-full list-none hover:bg-primary hover:text-white hover:scale-105 transition-all cursor-pointer"><a href="#Inicio">Inicio</a></li>
@@ -60,7 +60,7 @@ export default function Navbar() {
                         <Link to="/login" className="block w-full">Iniciar Sesion</Link>
                     </li>
                 </ul>
-            </div>
+            </nav>
 
         </header>
     )

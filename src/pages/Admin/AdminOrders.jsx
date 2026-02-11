@@ -29,7 +29,7 @@ export default function AdminOrders() {
             <p> Aquí puedes ver y gestionar las ordenes.</p>
 
 
-            <div className='overflow-x-auto'>
+            <section className='overflow-x-auto'>
                 <table className='w-full border-separate border-spacing-y-3'>
                     <thead>
                         <tr className='bg-white shadow-sm text-center'>
@@ -56,14 +56,8 @@ export default function AdminOrders() {
                             </tr>
                         ))}
                     </tbody>
-
                 </table>
-
-            </div>
-
-
-
-
+            </section>
         </main>
     )
 }

@@ -28,12 +28,12 @@ export default function AdminMesas() {
   }, []);
 
   return (
-    <div>
+    <section>
       <h1 className="text-2xl font-bold">Módulo: Mesas</h1>
       <p> Aquí puedes ver y gestionar las mesas.</p>
 
       <button className="bg-green-500 mt-15 px-5 py-2 rounded-2xl text-white">Agregar Nuevo Mesa</button>
-      <div className=''>
+      <div className='mt-5'>
         <table className=' overflow-x-auto w-full border-separate border-spacing-y-3'>
           <thead>
             <tr className='bg-white shadow-sm'>
@@ -87,6 +87,6 @@ export default function AdminMesas() {
 
       </div>
 
-    </div>
+    </section>
   )
 }
