@@ -11,7 +11,7 @@ export default function Action() {
 
 
 
-  return (
+    return (
     <section className='bg-fondo-light flex flex-col md:flex-row justify-center items-center p-10 min-h-screen'>
 
         {itemActions.map((item,index)=> (
@@ -35,7 +35,6 @@ export default function Action() {
         ))
 
         }
-      
     </section>
-  )
+    )
 }
